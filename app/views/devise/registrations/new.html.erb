@@ -1,0 +1,55 @@
+
+<h2>Sign up</h2>
+<%= params[:id] %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="field">
+  <%= f.label :Name %><br />
+  <%= f.text_field :name, autofocus: true %>
+</div>
+<div class="field">
+<%= f.label :Phone %><br />
+<%= f.text_field :phone, autofocus: true %>
+</div>
+<div class="field">
+<%= f.label :Location %><br />
+<%= f.text_field :location, autofocus: true %>
+</div>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <% if params[:id] == "doctor"  %>
+    <%= f.label :Specialization %><br />
+ <%= f.fields_for :doctor do |a| %>
+<%= a.text_field :specialization, autofocus: true %>
+   <% end %>
+    
+    <%= f.hidden_field :role, :value => 'doctor' %>
+  <% end %>
+   <% if params[:id] == "user"  %>
+     <%= f.hidden_field :role, :value => 'patient' %>
+   <% end %>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

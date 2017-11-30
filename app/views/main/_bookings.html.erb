@@ -1,0 +1,26 @@
+<table border="1">
+<tr>
+ <th>Patient Name</th>
+ <th>Doctor Name</th>
+ <th>Hospital Name</th>
+ <th>Illness</th>
+ <th>Symptoms</th>
+ <th>Doctors Observation</th>
+ <th>Status</th>
+ <th>View</th>
+</tr>
+
+<% @bookings.each do |b| %>
+    <tr>
+    <td><%= b.user.name %></td>
+    <td> <%= b.doctor.user.name %></td>
+    <td><%= b.hospital.name %></td>
+    <td> <%= b.illness %></td>
+    <td> <%= b.symptoms %></td>
+    <td> <%= b.observation %></td>
+    <td><%= b.status %></td>
+    <td><%= link_to 'show', {:controller => "doctors",:action => "show" , :id => b.id} %>
+    </tr>
+<%end%>
+
+</table>

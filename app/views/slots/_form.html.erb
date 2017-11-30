@@ -1,0 +1,43 @@
+<%= form_with(model: slot, local: true) do |form| %>
+  <% if slot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(slot.errors.count, "error") %> prohibited this slot from being saved:</h2>
+
+      <ul>
+      <% slot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :hospital_id %>
+    <%= form.select :hospital_id, @hospitals, id: :slot_hospital_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.select :date, @dates, id: :slot_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time_in %>
+    <%= form.text_field :time_in, id: :slot_time_in %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time_out %>
+    <%= form.text_field :time_out, id: :slot_time_out %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_of_patients %>
+    <%= form.number_field :no_of_patients, id: :slot_no_of_patients %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

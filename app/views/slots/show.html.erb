@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @slot.doctor.user.name %>
+</p>
+
+<p>
+  <strong>Hospital:</strong>
+  <%= @slot.hospital.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @slot.date %>
+</p>
+
+<p>
+  <strong>Time in:</strong>
+  <%= @slot.time_in %>
+</p>
+
+<p>
+  <strong>Time out:</strong>
+  <%= @slot.time_out %>
+</p>
+
+<p>
+  <strong>No of patients:</strong>
+  <%= @slot.no_of_patients %>
+</p>
+
+<%= link_to 'Edit', edit_slot_path(@slot) %> |
+<%= link_to 'Back', slots_path %>

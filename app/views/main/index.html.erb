@@ -1,0 +1,13 @@
+
+<% if user_signed_in?%>
+<%= flash[:error] %>
+Welcome <%= current_user.email %> you are <%= current_user.role%>
+<% if current_user.role =="doctor"%>
+  <%= link_to 'Bookings', {:controller=>"doctors", :action=>"index"} %> 
+  <%= link_to 'New Slot', {:controller=>"slots", :action=>"new"} %> 
+<% elsif current_user.role=="patient" %>
+<%= link_to 'Bookings', {:controller=>"home", :action=>"mybookings"} %> 
+<% else %>
+<%= link_to 'Bookings', {:controller=>"home", :action=>"mybookings"} %> 
+<% end %>
+<% end %>

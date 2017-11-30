@@ -1,0 +1,13 @@
+<%= @booking.id %>
+<%= @booking.user.name %>
+<%= @booking.hospital.name %>
+<%= @booking.doctor.user.name %>
+<%= @booking.illness %>
+<%= @booking.symptoms %>
+<%= form_for :booking , url: doctors_create_path do |f| %>
+    Observation: <%= f.text_area :observation %><br />
+    Status: <%= f.check_box :status %>
+    <input type="hidden" value = <%= @booking.id %> name="bookingId"/>
+    <%= f.submit %>
+  <% end %>
+  

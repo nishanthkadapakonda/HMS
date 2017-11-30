@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  hospital: one
+  date: 2017-11-28
+  time_in: MyString
+  time_out: MyString
+  no_of_patients: 1
+
+two:
+  user: two
+  hospital: two
+  date: 2017-11-28
+  time_in: MyString
+  time_out: MyString
+  no_of_patients: 1

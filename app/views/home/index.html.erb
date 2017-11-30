@@ -1,0 +1,69 @@
+
+Welcome <%= current_user.email %> you are <%= current_user.role%>
+<%= link_to 'Bookings', home_mybookings_path %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div id="template_overview">
+</div>
+ <form method="post" action="/home/index">
+ <select class="search" name="selectedType">
+   <option disabled selected>Search By</option>
+   <option value="doctor">Doctor</option>
+   <option value="specialization">Specialization</option>
+   <option value="hospital">Hospital</option> 
+   
+ </select>
+ <input list="browsers" name="browser">
+    <datalist id="browsers">
+    <% @doctors.each do |d| %>
+        <option value= <%= d.user.name%> >
+        <option value= <%= d.specialization%> >
+    <% end %>
+    <% @hospitals.each do |d| %>
+        <option value= <%= d.name%> >
+    <% end %>
+    
+    </datalist>
+ <input type="submit" value="search"/>
+ </form>
+    <table>
+    <tr>
+    <th>Doctor Name</th>
+    <th>Hospital Name</th>
+    <th>Date</th>
+    <th>Time_in</th>
+    <th>Time_out</th>
+    </tr>
+  <% if @flag == "hospital" %>
+        <% if @slots != nil && @slots.any?%>
+          <% @slots.each do | s| %>
+           <tr>
+            <td><%= s.doctor.user.name%></td>
+            <td><%= s.hospital.name%></td>
+            <td><%= s.date%></td>
+            <td><%= s.time_in%></td>
+						<td><%= s.time_out%></td>
+						<td><%= link_to "Book Slot", bookings_book_path(:name =>s.id)%>
+						</tr>
+          <% end %>
+        <% end %>
+     
+  <% else %>
+		<% if @slots != nil %>
+			 <% if @slots.any? %>
+			  <% byebug %>
+        <% @slots.first.each do |s| %>
+					<tr>
+					<td><%= s.doctor.user.name%></td>
+					<td><%= s.hospital.name%></td>
+					<td><%= s.date%></td>
+					<td><%= s.time_in%></td>
+					<td><%= s.time_out%></td>
+					<td><%= link_to "Book Slot" ,bookings_book_path(:name =>s.id) %>
+					</tr> 
+				<% end %>
+        <% end %>
+    <% end %>
+  <% end %>
+ </table>
+
+  

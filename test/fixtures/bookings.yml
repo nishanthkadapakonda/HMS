@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  slot: one
+  hospital: one
+  doctor: one
+  illness: MyString
+  symptoms: MyString
+  observation: MyString
+  status: false
+
+two:
+  user: two
+  slot: two
+  hospital: two
+  doctor: two
+  illness: MyString
+  symptoms: MyString
+  observation: MyString
+  status: false

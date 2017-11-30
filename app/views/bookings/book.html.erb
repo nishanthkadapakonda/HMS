@@ -1,0 +1,24 @@
+<table border="1">
+<tr>
+<th>Doctor</th>
+<th>Hospital</th>
+<th>Date</th>
+<th>Time IN</th>
+<th>Time Out</th>
+</tr>
+<tr>
+<td><%=@slot.doctor.user.name%></td>
+<td><%=@slot.hospital.name%></td>
+<td><%=@slot.date%></td>
+<td><%=@slot.time_in%></td>
+<td><%=@slot.time_out%></td>
+</tr>
+</table>
+<%= form_for @booking, url: {controller: "bookings" ,action: "createBooking"} do |f| %>
+    <%= f.hidden_field :slot_id ,:value => params[:name] %>
+    <%= f.label :Illness %>
+    <%= f.text_area :illness %>
+    <%= f.label :Symptoms %>
+    <%= f.text_area :symptoms %>
+    <%= f.submit "Create" %>
+  <% end %>
