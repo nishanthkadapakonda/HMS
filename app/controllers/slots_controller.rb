@@ -19,7 +19,7 @@ class SlotsController < ApplicationController
   def new
     @slot = Slot.new
     @hospitals = Hospital.all.collect{|i| [i.name , i.id]}
-    @dates =[Date.today,Date.today+1,Date.today+2,Date.today+3,Date.today+4]
+    @dates = Slot.populateDates
   end
 
   # GET /slots/1/edit
@@ -33,12 +33,19 @@ class SlotsController < ApplicationController
     @doc_id = Doctor.where(:user_id => current_user.id)
     @hospitals = Hospital.all.collect{|i| [i.name , i.id]}
     @slot.doctor_id = @doc_id.ids.first
-    
-    @dates =[Date.today,Date.today+1,Date.today+2,Date.today+3,Date.today+4]
+    @dates = Slot.populateDates
     respond_to do |format|
       if @slot.save
-        format.html { redirect_to @slot, notice: 'Slot was successfully created.' }
-        format.json { render :show, status: :created, location: @slot }
+        @isSetSlot = Slot.setSlot @slot
+        if(@isSetSlot == true)
+          format.html { redirect_to @slot, notice: 'Slot was successfully created.' }
+          format.json { render :show, status: :created, location: @slot }
+        else
+          Slot.slotRollBack
+          format.html { render :new }
+          format.json { render json: @slot.errors, status: :unprocessable_entity }
+        end
+        
       else
         format.html { render :new }
         format.json { render json: @slot.errors, status: :unprocessable_entity }

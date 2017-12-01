@@ -9,13 +9,25 @@ class HomeController < ApplicationController
     @hospitals = Hospital.all
     if(params[:selectedType] == "doctor")
       @slots=[]
-      @u_id = User.where(:name=>params[:browser])
-      @d_id = Doctor.where(:user_id => @u_id.ids)
-      i=0
+      @d_id = []
+      @available_slots = []
+      @u_id = User.where(:name=>params[:browser],:role => "doctor")
+      i = 0
+      @u_id.each do |u|
+        @d_id[i] = Doctor.where(:user_id => u.id) 
+        i = i+1       
+      end
+      i,k = 0,0
       @d_id.each do |u|
-        
-        @slots[i] = Slot.where(:doctor_id => u.id)
+        @slots[i] = Slot.where(:doctor_id => u.ids)
+        @slots[i].each do |a_s|
+           @available_slots[k] = Interval.where(:slot_id => a_s.id)
+           byebug
+           k = k+1
+        end        
+        byebug
         i =i+1
+        k = k+1
       end
     end
     if(params[:selectedType] == "specialization")
@@ -41,6 +53,7 @@ class HomeController < ApplicationController
       @bookings=Booking.all
     end
   end
+
   private
   def check_role
     if current_user.role =="patient" || current_user.role =="admin"

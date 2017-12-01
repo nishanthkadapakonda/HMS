@@ -51,16 +51,24 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
 		<% if @slots != nil %>
 			 <% if @slots.any? %>
 			  <% byebug %>
-        <% @slots.first.each do |s| %>
-					<tr>
-					<td><%= s.doctor.user.name%></td>
-					<td><%= s.hospital.name%></td>
-					<td><%= s.date%></td>
-					<td><%= s.time_in%></td>
-					<td><%= s.time_out%></td>
-					<td><%= link_to "Book Slot" ,bookings_book_path(:name =>s.id) %>
-					</tr> 
-				<% end %>
+        <% @slots.each do |o|%>
+          <% o.each do |s| %>
+            <tr>
+            <td><%= s.doctor.user.name%></td>
+            <td><%= s.hospital.name%></td>
+            <td><%= s.date%></td>
+            <td><%= s.time_in%></td>
+            <td><%= s.time_out%></td>
+            <td>
+              <% @available_slots.each do |a| %>
+                  <% a.each do |a_s| %>
+                     <%= link_to a_s.timeslot ,bookings_book_path(:name =>a_s.id) %>
+                   <% end %>
+              <% end %>
+            </tr> 
+          <% end %>
+        <% end %>
+        
         <% end %>
     <% end %>
   <% end %>

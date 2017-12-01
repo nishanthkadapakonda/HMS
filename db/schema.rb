@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130055609) do
+ActiveRecord::Schema.define(version: 20171201110308) do
 
   create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171130055609) do
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slot_time"
     t.index ["doctor_id"], name: "index_bookings_on_doctor_id"
     t.index ["hospital_id"], name: "index_bookings_on_hospital_id"
     t.index ["slot_id"], name: "index_bookings_on_slot_id"
@@ -44,6 +45,15 @@ ActiveRecord::Schema.define(version: 20171130055609) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "intervals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "slot_id"
+    t.string "timeslot"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_available"
+    t.index ["slot_id"], name: "index_intervals_on_slot_id"
   end
 
   create_table "slots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -85,6 +95,7 @@ ActiveRecord::Schema.define(version: 20171130055609) do
   add_foreign_key "bookings", "slots"
   add_foreign_key "bookings", "users"
   add_foreign_key "doctors", "users"
+  add_foreign_key "intervals", "slots"
   add_foreign_key "slots", "doctors"
   add_foreign_key "slots", "hospitals"
 end
