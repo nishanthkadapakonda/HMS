@@ -15,6 +15,8 @@
 </tr>
 </table>
 <%= form_for @booking, url: {controller: "bookings" ,action: "createBooking"} do |f| %>
+  <%= f.label :Slot %>
+   <%= f.select :slot_time, @available_slots %>
     <%= f.hidden_field :slot_id ,:value => params[:name] %>
     <%= f.label :Illness %>
     <%= f.text_area :illness %>

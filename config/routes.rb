@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   post 'home/index'
 
 
- root 'main#index' 
- get 'slots/index'
+  root 'main#index' 
+  get 'slots/index'
 
   get 'bookings/index'
   get 'doctors/show'

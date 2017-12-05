@@ -18,6 +18,7 @@ class Slot < ApplicationRecord
         @time = @temp.to_time + 15.minutes
       end
       @interval.timeslot = @time.strftime("%I:%M%p")
+      @interval.is_available = true
       @temp=@interval.timeslot
         if @interval.save
            flag = flag+1

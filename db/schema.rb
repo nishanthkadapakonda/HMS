@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171201110308) do
     t.string "illness"
     t.string "symptoms"
     t.string "observation"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slot_time"

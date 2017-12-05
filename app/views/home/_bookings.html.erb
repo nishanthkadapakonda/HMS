@@ -5,6 +5,7 @@
  <th>Hospital Name</th>
  <th>Illness</th>
  <th>Symptoms</th>
+ <th>Slot Time</th>
  <th>Doctors Observation</th>
  <th>Status</th>
 </tr>
@@ -16,6 +17,12 @@
     <td><%= b.hospital.name %></td>
     <td> <%= b.illness %></td>
     <td> <%= b.symptoms %></td>
+    <% @timing.each do |t| %>
+    
+    <% if b.slot_time.to_i == t.ids.first %>
+    <td><%= t.first.timeslot%></td>
+    <% end %>
+    <% end %>
     <td> <%= b.observation %></td>
     <td><%= b.status %></td>
 

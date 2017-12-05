@@ -42,7 +42,7 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
             <td><%= s.date%></td>
             <td><%= s.time_in%></td>
 						<td><%= s.time_out%></td>
-						<td><%= link_to "Book Slot", bookings_book_path(:name =>s.id)%>
+						<td><%= link_to "Book Slot", bookings_book_path(:name =>s.id)%></td>
 						</tr>
           <% end %>
         <% end %>
@@ -50,7 +50,6 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
   <% else %>
 		<% if @slots != nil %>
 			 <% if @slots.any? %>
-			  <% byebug %>
         <% @slots.each do |o|%>
           <% o.each do |s| %>
             <tr>
@@ -59,12 +58,7 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
             <td><%= s.date%></td>
             <td><%= s.time_in%></td>
             <td><%= s.time_out%></td>
-            <td>
-              <% @available_slots.each do |a| %>
-                  <% a.each do |a_s| %>
-                     <%= link_to a_s.timeslot ,bookings_book_path(:name =>a_s.id) %>
-                   <% end %>
-              <% end %>
+            <td><%= link_to "Book Slot", bookings_book_path(:name =>s.id)%> </td>
             </tr> 
           <% end %>
         <% end %>
