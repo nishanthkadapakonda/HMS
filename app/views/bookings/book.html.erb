@@ -14,6 +14,11 @@
 <td><%=@slot.time_out%></td>
 </tr>
 </table>
+<div>
+  <% @available_slots.each do |a| %>
+    <div class = "layoutDiv" id = <%= a[1] %> style="background-color:white" onclick="addColorClass(this.id);"  > <%= a[0] %> </div>
+  <% end %>
+</div>
 <%= form_for @booking, url: {controller: "bookings" ,action: "createBooking"} do |f| %>
   <%= f.label :Slot %>
    <%= f.select :slot_time, @available_slots %>
@@ -24,3 +29,24 @@
     <%= f.text_area :symptoms %>
     <%= f.submit "Create" %>
   <% end %>
+<script>
+  var glo = 0;
+  function addColorClass(id)
+  {
+    
+    var col = document.getElementById(id).style.getPropertyValue("background-color");
+    if(col == "white"){
+      console.log("present id " + id);
+      console.log(glo);
+      document.getElementById(id).style.background = "green";
+      document.getElementById(glo).style.background = "white";
+      glo = id;
+      console.log(glo);
+      }
+    if(col == "green"){
+      document.getElementById(id).style.background= "white";}
+    if(col == "red")
+      alert("slot already booked");
+     
+  }
+</script>

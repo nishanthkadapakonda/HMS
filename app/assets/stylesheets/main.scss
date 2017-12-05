@@ -1,3 +1,23 @@
-// Place all the styles related to the main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body{
+    margin :0px;
+    padding:0px;
+}
+.container-fluid{
+    margin :0px;
+    padding:0px;
+}
+.glyphicon-log-out,.glyphicon-search{
+    color:white;
+}
+.layoutDiv{
+    background-color : grey;
+    display:inline;
+    border:1px solid black;
+    padding:5px;
+    margin:1px;
+    cursor:pointer;
+}
+
+.layoutDiv.green { background-color: #00cc00; }
