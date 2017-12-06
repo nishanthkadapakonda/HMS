@@ -1,8 +1,7 @@
 class SlotsController < ApplicationController
   before_action :set_slot, only: [:show, :edit, :update, :destroy]
   before_action :check_role, except: [:index]
-  skip_before_action :verify_authenticity_token  
-
+  skip_before_action :verify_authenticity_token
   # GET /slots
   # GET /slots.json
   def index
@@ -24,6 +23,8 @@ class SlotsController < ApplicationController
 
   # GET /slots/1/edit
   def edit
+    @hospitals = Hospital.all.collect{|i| [i.name , i.id]}
+    @dates = Slot.populateDates    
   end
 
   # POST /slots
@@ -45,7 +46,6 @@ class SlotsController < ApplicationController
           format.html { render :new }
           format.json { render json: @slot.errors, status: :unprocessable_entity }
         end
-        
       else
         format.html { render :new }
         format.json { render json: @slot.errors, status: :unprocessable_entity }
@@ -76,8 +76,6 @@ class SlotsController < ApplicationController
       format.json { head :no_content }
     end
   end
- 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_slot
@@ -86,7 +84,7 @@ class SlotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slot_params
-      params.require(:slot).permit( :hospital_id, :date, :time_in, :time_out, :no_of_patients)
+      params.require(:slot).permit( :hospital_id, :date, :time_in, :time_out)
     end
     def check_role
       if current_user.role =="doctor"

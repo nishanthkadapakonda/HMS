@@ -5,18 +5,17 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
-  <%= f.label :Name %><br />
-  <%= f.text_field :name, autofocus: true %>
-</div>
-<div class="field">
-<%= f.label :Phone %><br />
-<%= f.text_field :phone, autofocus: true %>
-</div>
-<div class="field">
-<%= f.label :Location %><br />
-<%= f.text_field :location, autofocus: true %>
-</div>
-
+    <%= f.label :Name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div class="field">
+  <%= f.label :Phone %><br />
+  <%= f.text_field :phone, autofocus: true %>
+  </div>
+  <div class="field">
+  <%= f.label :Location %><br />
+  <%= f.text_field :location, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -38,10 +37,9 @@
 
   <% if params[:id] == "doctor"  %>
     <%= f.label :Specialization %><br />
- <%= f.fields_for :doctor do |a| %>
-<%= a.text_field :specialization, autofocus: true %>
-   <% end %>
-    
+    <%= f.fields_for :doctor do |a| %>
+       <%= a.text_field :specialization, autofocus: true %>
+    <% end %>
     <%= f.hidden_field :role, :value => 'doctor' %>
   <% end %>
    <% if params[:id] == "user"  %>

@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
  before_action :check_role
- skip_before_action :verify_authenticity_token  
- 
+ skip_before_action :verify_authenticity_token
   def index
     @slot = Slot.new
     @doctors = Doctor.all
@@ -13,12 +12,12 @@ class HomeController < ApplicationController
       @u_id = User.where(:name=>params[:browser],:role => "doctor")
       i = 0
       @u_id.each do |u|
-        @d_id[i] = Doctor.where(:user_id => u.id) 
-        i = i+1       
+        @d_id[i] = Doctor.where(:user_id => u.id)
+        i = i+1
       end
       i = 0
       @d_id.each do |u|
-        @slots[i] = Slot.where(:doctor_id => u.ids)    
+        @slots[i] = Slot.where("doctor_id = ? AND date >= ?", u.ids , Date.today)
         i =i+1
       end
     end
@@ -27,7 +26,7 @@ class HomeController < ApplicationController
       @u_id = Doctor.where(:specialization=>params[:browser])
       i=0
       @u_id.each do |u|
-        @slots[i] = Slot.where(:doctor_id => u.id)
+        @slots[i] = Slot.where("doctor_id = ? AND date >= ?", u.id, Date.today)
         i =i+1
       end
     end
@@ -35,7 +34,7 @@ class HomeController < ApplicationController
       @flag ="hospital"
       @slots=[]
       @u_id = Hospital.where(:name=>params[:browser])
-      @slots= Slot.where(:hospital_id => @u_id.ids)
+      @slots= Slot.where("hospital_id = ? AND date >= ?", @u_id.ids , Date.today)
     end
   end
   def mybookings

@@ -13,15 +13,18 @@
 <td><%=@slot.time_in%></td>
 <td><%=@slot.time_out%></td>
 </tr>
-</table>
+</table><br>
 <div>
   <% @available_slots.each do |a| %>
     <div class = "layoutDiv" id = <%= a[1] %> style="background-color:white" onclick="addColorClass(this.id);"  > <%= a[0] %> </div>
   <% end %>
 </div>
 <%= form_for @booking, url: {controller: "bookings" ,action: "createBooking"} do |f| %>
-  <%= f.label :Slot %>
-   <%= f.select :slot_time, @available_slots %>
+    <%= f.hidden_field :slot_time, :id => "hiddenSlotTime"%>
+    <% if false %>
+    <%= f.label :Slot %>
+    <%= f.select :slot_time, @available_slots %>
+    <% end %><br>
     <%= f.hidden_field :slot_id ,:value => params[:name] %>
     <%= f.label :Illness %>
     <%= f.text_area :illness %>
@@ -30,23 +33,25 @@
     <%= f.submit "Create" %>
   <% end %>
 <script>
-  var glo = 0;
+ var lastId;
+ var grp = document.getElementsByClassName("layoutDiv");
+ lastId = grp[0].id;
   function addColorClass(id)
   {
-    
-    var col = document.getElementById(id).style.getPropertyValue("background-color");
-    if(col == "white"){
-      console.log("present id " + id);
-      console.log(glo);
-      document.getElementById(id).style.background = "green";
-      document.getElementById(glo).style.background = "white";
-      glo = id;
-      console.log(glo);
-      }
-    if(col == "green"){
-      document.getElementById(id).style.background= "white";}
-    if(col == "red")
-      alert("slot already booked");
-     
+    if(typeof lastId != 'undefined'){
+      var col = document.getElementById(id).style.getPropertyValue("background-color");
+      if(col == "white"){
+        document.getElementById(lastId).style.background = "white";
+        document.getElementById(id).style.background = "green";
+        document.getElementById("hiddenSlotTime").value = id;
+        var d = document.getElementById("hiddenSlotTime").value;
+        console.log(d);
+        }
+      if(col == "green"){
+        document.getElementById(id).style.background= "white";}
+      if(col == "red")
+        alert("slot already booked");
+    }
+    lastId = id;
   }
 </script>

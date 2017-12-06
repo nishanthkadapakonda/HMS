@@ -18,10 +18,9 @@
     <td> <%= b.illness %></td>
     <td> <%= b.symptoms %></td>
     <% @timing.each do |t| %>
-    
-    <% if b.slot_time.to_i == t.ids.first %>
-    <td><%= t.first.timeslot%></td>
-    <% end %>
+        <% if b.slot_time.to_i == t.ids.first %>
+          <td><%= t.first.timeslot%></td>
+        <% end %>
     <% end %>
     <td> <%= b.observation %></td>
     <td><%= b.status %></td>

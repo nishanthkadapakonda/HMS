@@ -1,15 +1,15 @@
 class DoctorsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_role 
+  before_action :check_role
   def index
     doc_id=Doctor.where(:user_id=>current_user.id)
-    @bookings = Booking.where(:doctor_id => doc_id.first.id)  
+    @bookings = Booking.where(:doctor_id => doc_id.first.id)
   end
   def show
     @booking = Booking.find(params[:id])
   end
   def create
-    @booking = Booking.find(params[:bookingId])    
+    @booking = Booking.find(params[:bookingId])
     if  @booking.update_attributes(booking_params)
       redirect_to doctors_index_path
     else

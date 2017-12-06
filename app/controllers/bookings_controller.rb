@@ -14,18 +14,21 @@ class BookingsController < ApplicationController
     @booking.hospital_id = Slot.where(:id => @booking.slot_id).first.hospital.id
     @booking.doctor_id = Slot.where(:id => @booking.slot_id).first.doctor.id
     @booking.user_id = current_user.id
+    if Interval.where(:id => @booking.slot_time.to_i).first.is_available == true
     if @booking.save
       @updateColumn = Booking.update_is_available_to_true @booking
-      byebug
       @updateSlot = @updateColumn[0]
       @updateInterval = @updateColumn[1]
       @updateInterval.save
       @updateSlot.save
       redirect_to home_mybookings_path
     else
-      redirect_to root_path 
-
+      redirect_to root_path
     end
+  else
+    redirect_to bookings_book_path
+    flash[:slotUnavailable] = "slot is not available try with another slot"
+  end
   end
   private
   def booking_params

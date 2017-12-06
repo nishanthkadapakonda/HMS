@@ -9,8 +9,7 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
    <option disabled selected>Search By</option>
    <option value="doctor">Doctor</option>
    <option value="specialization">Specialization</option>
-   <option value="hospital">Hospital</option> 
-   
+   <option value="hospital">Hospital</option>
  </select>
  <input list="browsers" name="browser">
     <datalist id="browsers">
@@ -21,7 +20,6 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
     <% @hospitals.each do |d| %>
         <option value= <%= d.name%> >
     <% end %>
-    
     </datalist>
  <input type="submit" value="search"/>
  </form>
@@ -46,7 +44,6 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
 						</tr>
           <% end %>
         <% end %>
-     
   <% else %>
 		<% if @slots != nil %>
 			 <% if @slots.any? %>
@@ -59,13 +56,10 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
             <td><%= s.time_in%></td>
             <td><%= s.time_out%></td>
             <td><%= link_to "Book Slot", bookings_book_path(:name =>s.id)%> </td>
-            </tr> 
+            </tr>
           <% end %>
         <% end %>
-        
         <% end %>
     <% end %>
   <% end %>
  </table>
-
-  
