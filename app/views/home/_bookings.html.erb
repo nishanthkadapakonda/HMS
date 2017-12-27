@@ -12,8 +12,8 @@
 
 <% @bookings.each do |b| %>
     <tr>
-    <td><%= b.user.name %></td>
-    <td> <%= b.doctor.user.name %></td>
+    <td><%= b.user_name %></td>
+    <td> <%= b.doctor.user_name %></td>
     <td><%= b.hospital.name %></td>
     <td> <%= b.illness %></td>
     <td> <%= b.symptoms %></td>

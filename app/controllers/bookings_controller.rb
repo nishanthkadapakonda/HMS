@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
     @booking.hospital_id = Slot.where(:id => @booking.slot_id).first.hospital.id
     @booking.doctor_id = Slot.where(:id => @booking.slot_id).first.doctor.id
     @booking.user_id = current_user.id
+    byebug
     if Interval.where(:id => @booking.slot_time.to_i).first.is_available == true
     if @booking.save
       @updateColumn = Booking.update_is_available_to_true @booking
@@ -26,8 +27,9 @@ class BookingsController < ApplicationController
       redirect_to root_path
     end
   else
-    redirect_to bookings_book_path
-    flash[:slotUnavailable] = "slot is not available try with another slot"
+    byebug
+    redirect_to bookings_book_path(:name => @booking.slot_id)
+    flash[:error] = "slot is not available try with another slot"
   end
   end
   private

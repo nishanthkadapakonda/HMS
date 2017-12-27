@@ -1,3 +1,4 @@
+<p style = "color:red"><%=   flash[:error] %></p>
 <table border="1">
 <tr>
 <th>Doctor</th>
@@ -45,7 +46,6 @@
         document.getElementById(id).style.background = "green";
         document.getElementById("hiddenSlotTime").value = id;
         var d = document.getElementById("hiddenSlotTime").value;
-        console.log(d);
         }
       if(col == "green"){
         document.getElementById(id).style.background= "white";}
