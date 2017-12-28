@@ -1,3 +1,4 @@
+
 <%= form_with(model: slot, local: true) do |form| %>
   <% if slot.errors.any? %>
     <div id="error_explanation">
@@ -12,26 +13,45 @@
   <% end %>
 
 
+  <table>
+
+
+ <tr>
   <div class="field">
-    <%= form.label :hospital_id %>
-    <%= form.select :hospital_id, @hospitals, id: :slot_hospital_id %>
+  <td><%= form.label :hospital_id %></td>
+  <td><%= form.select :hospital_id, @hospitals, id: :slot_hospital_id %></td>
   </div>
+  </tr>
+
+  <tr>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.select :date, @dates, id: :slot_date %>
+  <td><%= form.label :date %></td>
+  <td><%= form.select :date, @dates, id: :slot_date %></td>
   </div>
+  </tr>
+  <tr>
 
-  <div class="field">
-    <%= form.label :time_in %>
-    <%= form.text_field :time_in, id: :slot_time_in %>
+  <div class="field" >
+  <td> <%= form.label :time_in %></td>
+  <td><%= form.text_field :time_in, id: :slot_time_in %></td>
   </div>
+  </tr>
+  <tr>
 
-  <div class="field">
-    <%= form.label :time_out %>
-    <%= form.text_field :time_out, id: :slot_time_out %>
+  <div class="form-group">
+  <td><%= form.label :time_out %></td>
+  <td><%= form.text_field :time_out, id: :slot_time_out %></td>
   </div>
+  </tr>
+  <tr>
   <div class="actions">
-    <%= form.submit %>
+  <td><%= form.submit %></td>
   </div>
+  </tr>
 <% end %>
+</table>
+
+
+
+

@@ -1,5 +1,33 @@
-<p style = "color:red"><%=   flash[:error] %></p>
-<table border="1">
+<html>
+<head>
+<style>
+body{
+  background-color:	#FFE4C4;
+}
+.table {
+  background-color:#00bfff;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0px auto;
+  float: none;
+  margin-top:5%;
+  margin-left:25%;
+ 
+}
+.slot_book{
+  
+  margin-left:40%;
+}
+.after_slot{
+  margin-left:30%;
+}
+
+</style>
+</head>
+<body>
+
+<table class="table text-centered table-bordered">
+<thead class="thead-inverse">
 <tr>
 <th>Doctor</th>
 <th>Hospital</th>
@@ -14,44 +42,60 @@
 <td><%=@slot.time_in%></td>
 <td><%=@slot.time_out%></td>
 </tr>
-</table><br>
-<div>
+</table><br><br>
+<div class="slot_book">
   <% @available_slots.each do |a| %>
+    <%if a[2] == true %>
     <div class = "layoutDiv" id = <%= a[1] %> style="background-color:white" onclick="addColorClass(this.id);"  > <%= a[0] %> </div>
+    <% else %>
+    <div class = "layoutDiv" id = <%= a[1] %> style="background-color:grey;cursor:not-allowed" > <%= a[0] %> </div>
+
+    <% end %>
   <% end %>
 </div>
+<div class="after_slot">
+<table>
 <%= form_for @booking, url: {controller: "bookings" ,action: "createBooking"} do |f| %>
-    <%= f.hidden_field :slot_time, :id => "hiddenSlotTime"%>
-    <% if false %>
-    <%= f.label :Slot %>
-    <%= f.select :slot_time, @available_slots %>
-    <% end %><br>
-    <%= f.hidden_field :slot_id ,:value => params[:name] %>
-    <%= f.label :Illness %>
-    <%= f.text_area :illness %>
-    <%= f.label :Symptoms %>
-    <%= f.text_area :symptoms %>
-    <%= f.submit "Create" %>
+<tr>
+   <%= f.hidden_field :slot_id  ,:value => params[:name] %><br>
+    <%= f.hidden_field :slot_time ,id: :hiddenSlotTime%>
+    <td><%= f.label :Illness %> </td>
+    <td><%= f.text_area :illness %> </td>
+    <td> <%= f.label :Symptoms %> <td>
+    <td><%= f.text_area :symptoms %> <td></tr>
+   <tr><td><h4 style="margin-left:350%"><%= f.submit "Create" ,class:"btn btn-primary"%></h4></td></tr>
   <% end %>
-<script>
- var lastId;
- var grp = document.getElementsByClassName("layoutDiv");
- lastId = grp[0].id;
-  function addColorClass(id)
-  {
-    if(typeof lastId != 'undefined'){
-      var col = document.getElementById(id).style.getPropertyValue("background-color");
-      if(col == "white"){
-        document.getElementById(lastId).style.background = "white";
-        document.getElementById(id).style.background = "green";
-        document.getElementById("hiddenSlotTime").value = id;
-        var d = document.getElementById("hiddenSlotTime").value;
-        }
-      if(col == "green"){
-        document.getElementById(id).style.background= "white";}
-      if(col == "red")
-        alert("slot already booked");
-    }
-    lastId = id;
-  }
-</script>
+  </table>
+  </div>
+  <script>
+  var lastId;
+  var grp = document.getElementsByClassName("layoutDiv");
+  lastId = grp[0].id;
+ 
+   function addColorClass(id)
+   {
+     console.log(id);
+     if(typeof lastId != 'undefined'){
+       var col = document.getElementById(id).style.getPropertyValue("background-color");
+       var lastIdCol = document.getElementById(lastId).style.getPropertyValue("background-color");
+       console.log(col);
+       if(col == "white"){
+         if(lastIdCol == "grey")
+           document.getElementById(lastId).style.background = "grey";
+         else
+          document.getElementById(lastId).style.background = "white";
+         document.getElementById(id).style.background = "green";
+         document.getElementById("hiddenSlotTime").value = id;
+         var d = document.getElementById("hiddenSlotTime").value;
+         }
+       if(col == "green")
+         document.getElementById(id).style.background= "white";
+       if(col == "red")
+         alert("slot already booked");
+     }
+     lastId = id;
+   }
+
+ </script>
+ </body>
+ </html>

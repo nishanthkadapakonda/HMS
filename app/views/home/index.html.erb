@@ -1,9 +1,44 @@
-<p>hii <%= request.remote_ip %></p>
+<html>
+<style>
+
+    body{
+        background-image: url(/assets/l.jpg);
+        background-repeat: repeat-n;
+        background-size: 100% 100%;
+        background-size: cover;
+    }
+    th{
+        width:10% 
+    }
+
+    .table th {
+      text-align: center;  
+  }
+  
+  .table {
+    background-color:#f5f5f5;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+    margin-top:5%;
+    margin-left:10%;
+    margin-bottom:10%;
+  }
+  .container-fluid {
+}
+
+form {
+  display: inline-block;
+  text-align: center;
+}
+</style>
+<body>
+
 Welcome <%= current_user.email %> you are <%= current_user.role%>
-<%= link_to 'Bookings', home_mybookings_path %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div id="template_overview">
 </div>
+<div class="form">
  <form method="post" action="/home/index">
  <select class="search" name="selectedType">
    <option disabled selected>Search By</option>
@@ -23,8 +58,10 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
     </datalist>
  <input type="submit" value="search"/>
  </form>
-    <table>
-    <tr>
+
+ <table class="table text-centered table-bordered">
+ <thead class="thead-inverse">
+ <tr>
     <th>Doctor Name</th>
     <th>Hospital Name</th>
     <th>Date</th>
@@ -44,6 +81,7 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
 						</tr>
           <% end %>
         <% end %>
+     
   <% else %>
 		<% if @slots != nil %>
 			 <% if @slots.any? %>
@@ -56,10 +94,15 @@ Welcome <%= current_user.email %> you are <%= current_user.role%>
             <td><%= s.time_in%></td>
             <td><%= s.time_out%></td>
             <td><%= link_to "Book Slot", bookings_book_path(:name =>s.id)%> </td>
-            </tr>
+            </tr> 
           <% end %>
         <% end %>
+        
         <% end %>
     <% end %>
   <% end %>
  </table>
+ </body>
+ </html>
+
+  

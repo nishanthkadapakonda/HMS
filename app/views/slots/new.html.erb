@@ -1,5 +1,27 @@
-<h1>New Slot</h1>
+<html>
+<style>
+body{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+    text-shadow: 4px 2px #FF0000;
+}
+
+</style>
+<body background="/assets/l.jpg">
+
+<div style="padding-left:100px;padding-top:100px">
+<div class="panel panel-default col-sm-7" >
+  <div class="panel-heading" style="padding-left:140px"><h1 style="color: #4B0082;">New Slot</h1><br/></div>
+  <div class="panel-body" style="padding-left:140px;background-color: #FFE4C4">
+
 
 <%= render 'form', slot: @slot %>
 
-<%= link_to 'Back', slots_path %>
+<%= link_to 'Back', slots_path ,class:'btn btn-primary'%>
+</div>
+</div>
+</body>
+</html>

@@ -1,9 +1,38 @@
 <p id="notice"><%= notice %></p>
+<h1 align="center">Slots</h1>
 
-<h1>Slots</h1>
+<div class="container-fluid">
+<html>
+<style>
+    th{
+        width:8%
+        border-color:black;
+        
+    }
 
-<table>
-  <thead>
+    .table th {
+      text-align: center;
+      border-color:black;
+  }
+  
+  .table {
+    border-color:black;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+  }
+  .container-fluid {
+   
+}
+</style>
+<body>
+
+<table  class="table table-bordered able-hover text-centered  table-inverse ">
+<thead class="thead-inverse">
+
+
+
     <tr>
       <th>User</th>
       <th>Hospital</th>
@@ -32,4 +61,5 @@
 
 <br>
 
-<%= link_to 'New Slot', new_slot_path %>
+<p align="center"><%= link_to 'New Slot', new_slot_path ,class:'btn btn-success'%></p>
+</div>

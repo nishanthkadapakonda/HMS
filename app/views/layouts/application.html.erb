@@ -8,23 +8,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
+
   <body class="container-fluid">
   <nav class="navbar navbar-inverse">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="#">HMS</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
+      
             <li class="active"><a href= <%= root_path %> >Home</a></li>
             <% if current_user.role == "doctor" %>
               <li><a href= <%= doctors_index_path %> >Bookings</a></li>
               <li><a href= <%= new_slot_path %> >NewSlot</a></li>
+              <li><a href= <%= slots_path %> >My Slots</a></li>
             <% end %>
             <% if current_user.role == "patient" %>
               <li><a href= <%= home_mybookings_path %> >My Bookings</a></li>
@@ -34,13 +37,18 @@
               <li><a href= <%= new_hospital_path %> >New Hospital</a></li>
               <li><a href= <%= hospitals_path %> >All Hospitals</a></li>
             <% end %>
+            <li ><a href= <%= root_path %> >About Us</a></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      
+    
+    
         <li><a href="/users/sign_out"><span class="glyphicon glyphicon-log-out">&nbspLogout</a></li>
       </ul>
-      <% end %>
     </div>
   </nav>
+    
     <%= yield %>
   </body>
 </html>

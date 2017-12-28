@@ -1,0 +1,267 @@
+.learnMoreButton {
+		    border: solid 2px #0fc0f4;
+    		width: 20%;
+    		position: relative;
+    		height: 50px;
+    		margin-left: 15%;
+    		margin-top: 4%;
+		}
+.settings_img{
+	width=10px;
+	height=20px;
+	margin-left: -45%;
+    margin-right: 142%;
+    position=relative;
+}
+		
+		.freeConsultationButton {
+			border: solid 2px #0fc0f4;
+    		width: 65%;
+    		position: relative;
+    		height: 50px;
+    		margin-left: 15%;
+    		margin-top: 12%;
+		}
+		.sendButton {
+		    border: solid 2px #0fc0f4;
+		    width: 15%;
+		    position: relative;
+		    height: 50px;
+		    margin-left: 5%;
+		    margin-top: 2%;
+		}
+		.learnMoreButton::after {
+			right: 0;
+			border-width: 0 35px 45px 0;
+  			border-color: transparent #007bff transparent transparent;
+		}
+		.freeConsultationButton::after {
+			right: 0;
+			border-width: 0 35px 45px 0;
+  			border-color: transparent #007bff transparent transparent;
+		}
+		.sendButton::after {
+			right: 0;
+			border-width: 0 35px 45px 0;
+  			border-color: transparent #007bff transparent transparent;
+		}
+		.heading {
+			font-size: 45px;
+    		font-weight: bold;
+		}
+		.subHeading {
+			font-size: 17px;
+		}
+		.learnMoreButtonData {
+		    margin-left: 13%;
+		    font-size: 18px;
+		    margin-top: 5.4%;
+		}
+		.freeConsultationButtonData {
+			margin-left: 13%;
+		    font-size: 18px;
+		    margin-top: 5.4%;
+		}
+		.sendButtonData {
+			margin-left: 7%;
+		    font-size: 18px;
+		    margin-top: 5.4%;
+		}
+		.learnMoreButton::after {
+			content: '';
+	    	position: absolute;
+			top: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+		}
+		.freeConsultationButton::after {
+			content: '';
+	    	position: absolute;
+			top: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+		}
+		.sendButton::after {
+			content: '';
+	    	position: absolute;
+			top: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+		}
+		.firstScreen {
+		    background: url("background-image.jpg") no-repeat center center fixed;
+		    height: -webkit-fill-available; 
+		    -webkit-background-size: cover;
+		    -moz-background-size: cover;
+		    -o-background-size: cover;
+		    background-size: cover;
+		}
+		.data {
+			margin-left: 30%;
+			margin-top: 15%;
+			color: white;
+			font-weight: bold;
+		}
+		.blueNavBar {
+			background-color: #0fc0f4 !important;
+			font-weight: bold;
+			height: 90px;
+		}
+		.whiteFont {
+			color: white !important;
+			font-size: 15px;
+		}
+		.navbar-brand {
+			font-size: 25px;
+		} 
+		.nav>li>a:focus, .nav>li>a:hover {
+			background-color: black;
+		}
+		.rightSideNavBar {
+			margin-left: 30%;
+		}
+		.aboutUsDiv {
+			margin-left: 40%;
+			padding: 10px;
+		}
+		.whatWeDoDiv {
+			margin-left: 38%;
+			padding: 10px;
+		}
+		.ourTeamDiv {
+			margin-left: 40.5%;
+			padding: 10px;
+		}
+		.clientTestimonalsDiv {
+			margin-left: 35%;
+			padding: 10px;
+		}
+		.diamondDiv {
+			margin-left: 45%;
+			padding: 10px;
+		}
+		hr {
+		    margin-top: 5px;
+		    margin-bottom: 20px;
+		    border: 0;
+		    border-top: 3px solid #0fc0f4;
+		    width: 20px;
+		    margin-left: 45.6%;
+		    padding: 10px;
+		}
+		.squareDivForIcon {
+		    border: solid 2px;
+		    width: 50px;
+		    height: 50px;
+		    margin-left: 36%;
+		}
+		.securityIcon {
+			padding: 5px;
+		}
+		.aboutUsDetailsDiv {
+			padding: 10px;
+    		margin-left: 2%;
+		}
+		.contactInformationDiv {
+			margin-left: 36%;
+			padding: 10px;
+		}
+		.aboutUsHeadings {
+			margin-left: 20%;
+			font-weight: bold;
+		}
+		.paddingsDiv {
+			padding: 5px;
+		}
+		.paddingDiv {
+			padding: 25px;
+		}
+		.thirdScreen {
+			background-color: #313131;
+			color: white;
+			height: 150px;
+		}
+		.contactUsForFreeConsultation {
+			margin-left: 10%;
+			margin-top: 8%;
+		}
+		.temp {
+			margin-top: 15px;
+		}
+		.card {
+			border: solid 1px grey;
+			width: 300px;
+			height: 200px;
+			padding: 10px;
+		}
+		.dottedCard {
+			border: dotted 1px grey;
+			width: 150px;
+			height: 150px;
+			padding: 10px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		.whatWeDoIcon {
+			margin-left: 40%;
+		}
+		.whatWeDoIconsHeadings {
+			margin-left: 20%;
+			padding: 5px;
+			font-size: 18px;
+		}
+		.whatWeDoIconsPadding {
+			padding: 15px;
+		}
+		.whatWeDoDetails {
+			margin-left: 6%;
+		}
+		.effortsIcons {
+			margin-left: 35%;
+		}
+		.paddingssDiv {
+			padding: 50px;
+		}
+		.teamMembersImages {
+			border-radius: 50%;
+			height: 250px;
+			width: 250px;
+		}
+		.teamMemberName {
+			margin-left: 20%;
+		}
+		.teamMemberDesignation {
+			margin-left: 30%;
+		}
+		hr.line {
+			margin-top: 30px;
+		    margin-bottom: 20px;
+		    border: 0;
+		    border-top: 1px solid grey;
+		    padding: 10px;
+		    width: 100%;
+		    margin-left: 0% !important;
+		}
+		.testimonialCard {
+			border: solid 1px white;
+			width: 400px;
+			height: 300px;
+			padding: 10px;
+			margin-left: 20%;
+		}
+		.testimonialsImage {
+			height: 100px;
+    		width: 100px;
+    		border-radius: 50%;
+		}
+		.form-control {
+			border-radius: 0 !important;
+			height: 40px !important;
+		}
+		.messageTextArea {
+			height: 200px !important;
+			width: 100%;
+		}

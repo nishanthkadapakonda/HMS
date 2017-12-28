@@ -1,4 +1,37 @@
-<table border="1">
+<html>
+<style>
+
+    body{
+        background-image: url(/assets/l.jpg);
+        background-repeat:none
+    }
+    th{
+        width:10%
+       
+        
+    }
+
+    .table th {
+      text-align: center;
+      
+  }
+  
+  .table {
+  
+    background-color:#f5f5f5;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+    margin-top:5%;
+    margin-left:10%;
+    margin-bottom:10%;
+  }
+  
+</style>
+<body>
+<table class="table text-centered table-bordered">
+<thead class="thead-inverse">
 <tr>
  <th>Patient Name</th>
  <th>Doctor Name</th>
@@ -9,18 +42,19 @@
  <th>Doctors Observation</th>
  <th>Status</th>
 </tr>
-
+</thead>
 <% @bookings.each do |b| %>
     <tr>
-    <td><%= b.user_name %></td>
-    <td> <%= b.doctor.user_name %></td>
+    <td><%= b.user.name %></td>
+    <td> <%= b.doctor.user.name %></td>
     <td><%= b.hospital.name %></td>
     <td> <%= b.illness %></td>
     <td> <%= b.symptoms %></td>
     <% @timing.each do |t| %>
-        <% if b.slot_time.to_i == t.ids.first %>
-          <td><%= t.first.timeslot%></td>
-        <% end %>
+    
+    <% if b.slot_time.to_i == t.ids.first %>
+    <td><%= t.first.timeslot%></td>
+    <% end %>
     <% end %>
     <td> <%= b.observation %></td>
     <td><%= b.status %></td>
@@ -29,3 +63,5 @@
 <%end%>
 
 </table>
+</body>
+</html>

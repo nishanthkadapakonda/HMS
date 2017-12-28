@@ -1,18 +1,35 @@
-<table border="1">
-<tr>
- <th>Patient Name</th>
- <th>Doctor Name</th>
- <th>Hospital Name</th>
- <th>Illness</th>
- <th>Symptoms</th>
- <th>Doctors Observation</th>
- <th>Status</th>
- <th>View</th>
-</tr>
+<html>
+<style>
+    th{
+        width:10%
+    }
+    .table {
+        border-radius: 5px;
+        width: 50%;
+        margin: 0px auto;
+        float: none;
+      }
+</style>
+<body>
 
+<table  class="table table-bordered">
+<thead class="thead-dark">
+  <tr>
+    <th>Patient Name</th>
+    <th >Doctor Name</th>
+    <th >Hospital Name</th>
+    <th >Illness</th>
+    <th >Symptoms</th>
+    <th >Doctors Observation</th>
+    <th >Status</th>
+    <th >View</th>
+  </tr>
+</thead>
+<tbody>
+  
 <% @bookings.each do |b| %>
     <tr>
-    <td><%= b.user_name %></td>
+    <td><%= b.user.name %></td>
     <td> <%= b.doctor.user.name %></td>
     <td><%= b.hospital.name %></td>
     <td> <%= b.illness %></td>
@@ -22,5 +39,7 @@
     <td><%= link_to 'show', {:controller => "doctors",:action => "show" , :id => b.id} %>
     </tr>
 <%end%>
-
+</tbody>
 </table>
+</body>
+</html>

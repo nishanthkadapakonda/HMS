@@ -1,5 +1,526 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+<link rel="stylesheet" href="/assets/style.css.scss">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row firstScreen">
+			<div class="container-fluid data">
+				<div class="row">
+					<h1 class="heading" >HOSPITAL MANAGEMENT SYSTEM</h1>
+				</div>
+			 
+				<div class="row">
+					<h4 class="subHeading"></h4>
+				</div>
+				
 
-<% if user_signed_in?%>
-<%= flash[:error] %>
-Welcome <%= current_user.email %> you are <%= current_user.role%>
-<% end %>
+			</div>
+		</div>
+		
+				<div class="row">
+					<div class="container-fluid">
+						<div class="row aboutUsDiv">
+							<h1>About Us</h1>
+						</div>
+						<div class="row diamondDiv">
+							<img src="/assets/diamond.png" alt="">
+						</div>
+						<div class="row">
+							<hr>
+						</div>
+						<div class="row">
+							<div class="container-fluid aboutUsDetailsDiv">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="row paddingsDiv">
+											<div class="squareDivForIcon">
+												<img src="/assets/locked-padlock.png" alt="Security" class="securityIcon">
+											</div>
+										</div>
+										<div class="row aboutUsHeadings paddingsDiv">SECURITY MANAGEMENT</div>
+										<div class="row paddingsDiv"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur enim dignissimos adipisci</p></div>
+									</div>
+									<div class="col-md-4">
+										<div class="row paddingsDiv">
+											<div class="squareDivForIcon">
+												<img src="/assets/bar-graph.png" alt="Finance Planning" class="securityIcon">
+											</div>
+										</div>
+										<div class="row paddingsDiv aboutUsHeadings">HEALTH PLANNING</div>
+										<div class="row paddingsDiv"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur enim dignissimos adipisci</p></div>
+									</div>
+									<div class="col-md-4">
+										<div class="row paddingsDiv">
+											<div class="squareDivForIcon">
+												<img src="/assets/search.png" alt="Educational Support" class="securityIcon">
+											</div>
+										</div>
+										<div class="row paddingsDiv aboutUsHeadings">DOCTOR SUPPORT</div>
+										<div class="row paddingsDiv"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur enim dignissimos adipisci</p></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container-fluid thirdScreen">
+				<div class="row">
+					<div class="col-md-8">
+						<h4 class="contactUsForFreeConsultation">CONTACT US TODAY FOR FREE CONSULTATION</h4>
+					</div>
+					<div class="col-md-4">
+						<div class="freeConsultationButton"><p class="freeConsultationButtonData">FREE CONSULTATION</p></div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="container-fluid">
+						<div class="row whatWeDoDiv">
+							<h1>What We Do</h1>
+						</div>			
+						<div class="row diamondDiv">
+							<img src="/assets/diamond.png" alt="">
+						</div>
+						<div class="row">
+							<hr>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="container-fluid whatWeDoDetails">
+						<div class="row">
+							<div class="col-md-4 paddingDiv">
+								<div class="card">
+									<div class="container-fluid">
+										<div class="row">
+											<img src="/assets/home.png" alt="Home" class="whatWeDoIcon">
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											<strong class="whatWeDoIconsHeadings">Home Checkup</strong>
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero provident impedit 
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 paddingDiv">
+								<div class="card">
+									<div class="container-fluid">
+										<div class="row">
+											<img src="/assets/four-bars-graph.png" alt="Home" class="whatWeDoIcon">
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											<strong class="whatWeDoIconsHeadings">Policy Consulting</strong>
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero provident impedit 
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 paddingDiv">
+								<div class="card">
+									<div class="container-fluid">
+										<div class="row">
+											<img src="/assets/car2.svg" alt="Home" class="whatWeDoIcon" width="15%" height="15%">
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											<strong class="whatWeDoIconsHeadings" style="margin-left: 28% !important">Ambulance</strong>
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero provident impedit 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 paddingDiv">
+								<div class="card">
+									<div class="container-fluid">
+										<div class="row">
+											<img src="/assets/savings.png" alt="Home" class="whatWeDoIcon">
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											<strong class="whatWeDoIconsHeadings">Booking Slot</strong>
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero provident impedit 
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 paddingDiv">
+								<div class="card">
+									<div class="container-fluid">
+										<div class="row">
+											<img src="/assets/piled-files.png" alt="Home" class="whatWeDoIcon">
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											<strong class="whatWeDoIconsHeadings">Health Analysis</strong>
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero provident impedit 
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 paddingDiv">
+								<div class="card">
+									<div class="container-fluid">
+										<div class="row">
+											<img src="/assets/avatar.png" alt="Home" class="whatWeDoIcon">
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											<strong class="whatWeDoIconsHeadings">Expert Advisor</strong>
+										</div>
+										<div class="row whatWeDoIconsPadding">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero provident impedit 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container-fluid" style="background-color: #313131; color: white; height: 250px;">
+				<div class="row" style="margin-left: 35px;">
+					<div class="col-md-3 paddingssDiv">
+						<div class="dottedCard">
+							<div class="container-fluid">
+								<div class="row">
+									<img src="/assets/alarm-clock.png" alt="24x7" class="effortsIcons">
+								</div>
+								<div class="row" style="margin-left: 10%;">
+									<h2>3550</h2>
+								</div>
+								<div class="row" style="margin-left: 6%;">
+									<p>Hours of work</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 paddingssDiv">
+						<div class="dottedCard">
+							<div class="container-fluid">
+								<div class="row">
+									<img src="/assets/two-men.png" alt="Clients" class="effortsIcons">
+								</div>
+								<div class="row" style="margin-left: 10%;">
+									<h2>7200</h2>
+								</div>
+								<div class="row" style="margin-left: 3%;">
+									<p>Qulaified Doctors</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 paddingssDiv">
+						<div class="dottedCard">
+							<div class="container-fluid">
+								<div class="row">
+									<img src="/assets/laptop.png" alt="Projects" class="effortsIcons">
+								</div>
+								<div class="row" style="margin-left: 10%;">
+									<h2>1012</h2>
+								</div>
+								<div class="row ">
+									<p style="margin-left: 30%">SLots</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 paddingssDiv">
+						<div class="dottedCard">
+							<div class="container-fluid">
+								<div class="row">
+									<img src="/assets/like.png" alt="Theme Experts" class="effortsIcons">
+								</div>
+								<div class="row" style="margin-left: 27%;">
+									<h2>99</h2>
+								</div>
+								<div class="row" style="margin-left: 5%;">
+									<p>Theme Experts</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="container-fluid">
+						<div class="row ourTeamDiv">
+							<h1>Our Team</h1>
+						</div>
+						<div class="row diamondDiv">
+							<img src="/assets/diamond.png" alt="Diamond">
+						</div>
+						<div class="row">
+							<hr>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="margin-left: 5%;">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="row">
+									<img src="/assets/onimaDicosta.jpg" alt="Onima" class="teamMembersImages">
+								</div>
+								<div class="row">
+									<h3 class="teamMemberName">Dr.Onima Dicosta</h3>
+								</div>
+								<div class="row">
+									<p class="teamMemberDesignation">Cardiologist</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="row">
+									<img src="/assets/daveYoung.jpg" alt="Dave Young" class="teamMembersImages">
+								</div>
+								<div class="row">
+									<h3 class="teamMemberName">Dr.Dave Young</h3>
+								</div>
+								<div class="row">
+									<p class="teamMemberDesignation">Home Surgeon</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="row">
+									<img src="/assets/maryWilliams.jpg" alt="Mary" class="teamMembersImages">
+								</div>
+								<div class="row">
+									<h3 class="teamMemberName">Dr.Mary Williams</h3>
+								</div>
+								<div class="row">
+									<p class="teamMemberDesignation">M.B.B.S</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="row">
+									<img src="/assets/johnDoe.jpg" alt="John Doe" class="teamMembersImages">
+								</div>
+								<div class="row">
+									<h3 class="teamMemberName" style="margin-left: 25% !important">Dr.John Doe</h3>
+								</div>
+								<div class="row">
+									<p class="teamMemberDesignation">Dentist</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="container-fluid">
+						<div class="row clientTestimonalsDiv">
+							<h1>Management Team</h1>
+						</div>
+						<div class="row diamondDiv">
+							<img src="/assets/diamond.png" alt="Diamond">
+						</div>
+						<div class="row">
+							<hr>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+					      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					      <li data-target="#myCarousel" data-slide-to="1"></li>
+					      <li data-target="#myCarousel" data-slide-to="2"></li>
+					    </ol>
+					    <div class="carousel-inner">
+					      <div class="item active">
+					        <div class="row">
+					        	<div class="col-md-6">
+					        		<div class="testimonialCard">
+							        	<div class="row">
+							        		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quas reiciendis, laborum quo impedit
+							        	</div>
+							        	<div class="row">
+							        		<div class="col-md-8">
+							        			<hr class="line">
+							        		</div>
+							        		<div class="col-md-4">
+							        			<img src="/assets/maryWilliams.jpg" alt="Mary" class="testimonialsImage">
+							        		</div>
+							        	</div>
+							        	<div class="row">
+							        		<h3>John Doe</h3>
+							        		<p style="color: #0fc0f4;">Manger</p>
+							        	</div>
+							        </div>
+					        	</div>
+					        	<div class="col-md-6">
+					        		<div class="testimonialCard">
+							        	<div class="row">
+							        		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quas reiciendis, laborum quo impedit
+							        	</div>
+							        	<div class="row">
+							        		<div class="col-md-8">
+							        			<hr class="line">
+							        		</div>
+							        		<div class="col-md-4">
+							        			<img src="/assets/johnDoe.jpg" alt="Mary" class="testimonialsImage">
+							        		</div>
+							        	</div>
+							        	<div class="row">
+							        		<h3>Slider</h3>
+							        		<p style="color: #0fc0f4;">Finance</p>
+							        	</div>
+							        </div>
+					        	</div>
+					        </div>
+					      </div>
+					      <div class="item">
+					        <div class="row">
+					        	<div class="col-md-6">
+					        		<div class="testimonialCard">
+							        	<div class="row">
+							        		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quas reiciendis, laborum quo impedit
+							        	</div>
+							        	<div class="row">
+							        		<div class="col-md-8">
+							        			<hr class="line">
+							        		</div>
+							        		<div class="col-md-4">
+							        			<img src="/assets/onimaDicosta.jpg" alt="Mary" class="testimonialsImage">
+							        		</div>
+							        	</div>
+							        	<div class="row">
+							        		<h3>John Doe</h3>
+							        		<p style="color: #0fc0f4;">Marketing Manager</p>
+							        	</div>
+							        </div>
+					        	</div>
+					        	<div class="col-md-6">
+					        		<div class="testimonialCard">
+							        	<div class="row">
+							        		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quas reiciendis, laborum quo impedit
+							        	</div>
+							        	<div class="row">
+							        		<div class="col-md-8">
+							        			<hr class="line">
+							        		</div>
+							        		<div class="col-md-4">
+							        			<img src="/assets/daveYoung.jpg" alt="Mary" class="testimonialsImage">
+							        		</div>
+							        	</div>
+							        	<div class="row">
+							        		<h3>John Doe</h3>
+							        		<p style="color: #0fc0f4;">Marketing Manager</p>
+							        	</div>
+							        </div>
+					        	</div>
+					        </div>
+					      </div>
+				      	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="container-fluid">
+						<div class="row contactInformationDiv">
+							<h1>Contact Information</h1>
+						</div>
+						<div class="row diamondDiv">
+							<img src="/assets/diamond.png" alt="Diamond">
+						</div>
+						<div class="row">
+							<hr>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-6">
+								<input type="text" class="form-control" placeholder="Name*">
+							</div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" placeholder="Email*">
+							</div>
+						</div>
+						<div class="row" style="margin-top: 25px;">
+							<div class="col-md-12">
+								<textarea class="form-control messageTextArea" placeholder="Message*"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4" style="padding-left: 50px;">
+						<div class="row" style="margin-top: -24px;">
+							<h2>Contact Info</h2>
+						</div>
+						<div class="row" style="margin-top: 25px;">
+							<div class="col-md-2">
+								<img src="/assets/paper-plane.png" alt="Message">
+							</div>
+							<div class="col-md-10">
+								44 New Design Street, rne 005
+							</div>
+						</div>
+						<div class="row" style="margin-top: 25px;">
+							<div class="col-md-2">
+								<img src="/assets/phone-call.png" alt="Call">
+							</div>
+							<div class="col-md-10">
+								(0041) 111-252-3333
+							</div>
+						</div>
+						<div class="row" style="margin-top: 25px;">
+							<div class="col-md-2">
+								<img src="/assets/fax.png" alt="Fax">
+							</div>
+							<div class="col-md-10">
+								Fax: (123) 118 9999
+							</div>
+						</div>
+						<div class="row" style="margin-top: 25px;">
+							<div class="col-md-2">
+								<img src="/assets/fax.png" alt="Fax">
+							</div>
+							<div class="col-md-10">
+								Fax: (123) 118 9999
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sendButton"><p class="sendButtonData">SEND MESSAGE</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="container-fluid" style="background-color: #1d1c21; color: white;">
+				<h6 style="margin-left: 40%;">&copy; Copyright 2017, Choice | All Rights Reserved.</h6>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

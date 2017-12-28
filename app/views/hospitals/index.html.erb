@@ -1,33 +1,63 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Hospitals</h1>
+<html>
+<style>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Place</th>
-      <th>Pin</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+body {
+  background-color: lightblue;
+}
+    th{
+        width:10%
+       
+        
+    }
 
-  <tbody>
-    <% @hospitals.each do |hospital| %>
-      <tr>
-        <td><%= hospital.name %></td>
-        <td><%= hospital.place %></td>
-        <td><%= hospital.pin %></td>
-        <td><%= hospital.phone %></td>
-        <td><%= link_to 'Show', hospital %></td>
-        <td><%= link_to 'Edit', edit_hospital_path(hospital) %></td>
-        <td><%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    .table th {
+      text-align: center;
+      
+  }
+  
+  .table {
+  
+    background-color:#f5f5f5;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+    margin-top:5%;
+    margin-left:30%;
+    margin-bottom:2%;
+  }
+  
+</style>
+<body>
+
+<h1 align="center">HOSPITALS</h1>
+
+<table class="table text-centered table-bordered">
+<thead class="thead-inverse">
+<tr>
+<th>Name</th>
+<th>Place</th>
+<th>Pin</th>
+<th>Phone</th>
+<th colspan="3"></th>
+</tr>
+</thead>
+<tbody>
+<% @hospitals.each do |hospital| %>
+  <tr>
+    <td><%= hospital.name %></td>
+    <td><%= hospital.place %></td>
+    <td><%= hospital.pin %></td>
+    <td><%= hospital.phone %></td>
+    <td><%= link_to 'Show', hospital %></td>
+    <td><%= link_to 'Edit', edit_hospital_path(hospital) %></td>
+    <td><%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
 </table>
+</body>
+</html>
 
-<br>
-
-<%= link_to 'New Hospital', new_hospital_path %>
+<p align="center"><%= link_to 'New Hospital', new_hospital_path ,class:"btn btn-primary" %></p>

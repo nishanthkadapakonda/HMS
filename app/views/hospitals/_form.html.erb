@@ -11,27 +11,70 @@
     </div>
   <% end %>
 
+  <html>
+  <style>
+  body {
+    background-color: lightblue;
+  }
+  
+     
+      th{
+          width:10%
+         
+          
+      }
+  
+      .table th {
+        text-align: center;
+        
+    }
+    
+    .table {
+    
+      background-color:#f5f5f5;
+      border-radius: 10px;
+      width: 50%;
+      margin: 0px auto;
+      float: none;
+      margin-top:5%;
+      margin-left:30%;
+      margin-bottom:5;
+    }
+    
+  </style>
+
+<body>
+<table class="table text-centered table-bordered">
+<thead class="thead-inverse">
+<tr>
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :hospital_name %>
+    <td><%= form.label :name %></td>
+    <td><%= form.text_field :name, id: :hospital_name %></td>
   </div>
+</tr>
+<tr>
+  <div class="field">
+  <td><%= form.label :place %></td>
+  <td><%= form.text_field :place, id: :hospital_place %></td>
+  </div>
+  </tr><tr>
 
   <div class="field">
-    <%= form.label :place %>
-    <%= form.text_field :place, id: :hospital_place %>
+  <td> <%= form.label :pin %></td>
+  <td><%= form.text_field :pin, id: :hospital_pin %></td>
   </div>
+  </tr><tr>
 
   <div class="field">
-    <%= form.label :pin %>
-    <%= form.text_field :pin, id: :hospital_pin %>
+  <td><%= form.label :phone %></td>
+  <td><%= form.text_field :phone, id: :hospital_phone %></td>
   </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :hospital_phone %>
-  </div>
+  </tr><tr>
 
   <div class="actions">
-    <%= form.submit %>
+  <td><%= form.submit %> </td>
   </div>
+  <tr>
 <% end %>
+</table></body>
+</html>

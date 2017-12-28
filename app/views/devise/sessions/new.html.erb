@@ -1,12 +1,21 @@
-<h2>Log in</h2>
+<html>
+<body background="/assets/login.jpg">
+<div style="padding-left:270px">
+<div class="panel panel-default col-sm-7" >
+  <div class="panel-heading" style="padding-left:140px"><h1 style="color: #4B0082;">Log In</h1><br /></div>
+  <div class="panel-body" style="padding-left:140px" >
+
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
+  <span class="glyphicon glyphicon-user inner-addon left-addon"></span>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
+  <span class="glyphicon glyphicon glyphicon-briefcase inner-addon left-addon"></span>
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -23,4 +32,7 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %></div>
+</div>
+</body>
+</html>
